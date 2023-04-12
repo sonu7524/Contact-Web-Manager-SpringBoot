@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org" th:replace = "base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<section>
+        <!-- Your form elements will be here -->
+    <div class="bg-img">
+        <form th:action="@{/do-register}" class="register-container" method="post" th:object="${user}">
+            <h2>Register Here</h2>
+            <label><b>Name</b></label>
+            <input type="text" placeholder="Enter Your Name" name="name" required th:value="${user.name}">
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required th:value="${user.email}">
+
+            <label><b>Mobile No.</b></label>
+            <input type="text" placeholder="Enter Your Mobile Number" name="mobileNo" required th:value="${user.mobileNo}">
+
+            <label><b>Create Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <div class="form-group text-center">
+                <input type="checkbox" name="agreement" required>
+                <label for="agreement">Accept terms and conditions.</label>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>
